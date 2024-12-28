@@ -4,7 +4,7 @@
 #include "game/game.h"
 
 int main() {
-    int N = 100000; // number of iterations
+    int N = 1000000; // number of iterations
 
     Solver solver;
     solver.Train(N);

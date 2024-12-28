@@ -124,24 +124,30 @@ void Solver::PrintSolution() {
 
     // output strategies
     std::cout << "Player 1 Strategy:" << std::endl;
+    std::cout << "Card   History   Check  |   Bet" << std::endl;
     for (int c = 1; c <= 3; ++c) {
         for (auto [h, strategy] : strategy1[c]) {
-            std::cout << std::fixed << std::setprecision(2) <<
-            "Card: " << cards[c] <<
-            ", History: " << (!h.empty() ? h : "--") <<
-            ", Strategy: check " << strategy[0] * 100 <<
-            "% | bet " << strategy[1] * 100 << "%" << std::endl;
+            std::cout << " " << cards[c]
+                    << "       " << (!h.empty() ? h : "--")
+                    << "     "
+                    << std::fixed << std::setw(6) << std::setprecision(2) << strategy[0] * 100
+                    << "% | "
+                    << std::setw(6) << std::setprecision(2) << strategy[1] * 100
+                    << "%" << std::endl;
         }
     }
     std::cout << std::endl;
     std::cout << "Player 2 Strategy:" << std::endl;
+    std::cout << "Card   History   Check  |   Bet" << std::endl;
     for (int c = 1; c <= 3; ++c) {
         for (auto [h, strategy] : strategy2[c]) {
-            std::cout << std::fixed << std::setprecision(2) <<
-            "Card: " << cards[c] <<
-            ", History: " << (!h.empty() ? h : "--") <<
-            ", Strategy: check " << strategy[0] * 100 <<
-            "% | bet " << strategy[1] * 100 << "%" << std::endl;
+            std::cout << " " << cards[c]
+                    << "        " << (!h.empty() ? h : "--")
+                    << "     "
+                    << std::fixed << std::setw(6) << std::setprecision(2) << strategy[0] * 100
+                    << "% | "
+                    << std::setw(6) << std::setprecision(2) << strategy[1] * 100
+                    << "%" << std::endl;
         }
     }
     std::cout << std::endl;
